@@ -53,6 +53,7 @@ const getSelected = (selected) => {
 const Years = ({
   height,
   hideOnSelect,
+  enableYearSelection,
   locale,
   max,
   maxDate,
@@ -233,9 +234,15 @@ const Years = ({
                 [styles.first]: index === 0,
                 [styles.last]: index === yearsSliced.length - 1,
               })}
-              onClick={(e) =>
-                shouldAllowToSwitchYear && handleClick(new Date(year, 0, 1), e)
-              }
+              onClick={(e) => {
+                console.log('enable year selection', enableYearSelection);
+                if (enableYearSelection) {
+                  console.log(year, min, minDate, max, maxDate);
+                  // onSelect();
+                } else if (shouldAllowToSwitchYear) {
+                  handleClick(new Date(year, 0, 1), e);
+                }
+              }}
               title={shouldAllowToSwitchYear ? `Set year to ${year}` : ''}
               data-year={year}
               style={{

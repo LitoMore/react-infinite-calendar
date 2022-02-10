@@ -48,6 +48,7 @@ export const withDefaultProps = defaultProps({
 
 export default class Calendar extends Component {
   constructor(props) {
+    console.log('calendar', props);
     super(...arguments);
     this.updateYears(props);
 
@@ -352,6 +353,8 @@ export default class Calendar extends Component {
       minDate || min,
       maxDate || max
     );
+
+    console.log(passThrough);
 
     return (
       <div

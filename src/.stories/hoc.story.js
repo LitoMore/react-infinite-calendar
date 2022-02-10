@@ -79,6 +79,23 @@ storiesOf('Higher Order Components', module)
     maxDate={addMonths(new Date(), 10)}
   />
 ))
+.add("Monthly selection with selectable year", () => (
+  <InfiniteCalendar
+    selected={new Date()}
+    display={'years'}
+    displayOptions={{
+      showHeader: false,
+      hideYearsOnSelect: false,
+    }}
+    minDate={subMonths(new Date(), 10)}
+    maxDate={addMonths(new Date(), 10)}
+    passThrough={{
+      Years: {
+        enableYearSelection: true
+      }
+    }}
+  />
+))
 .add('Month Range selection', () => (
   <InfiniteCalendar
     selected={{

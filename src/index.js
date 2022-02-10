@@ -52,6 +52,7 @@ export default class DefaultCalendar extends Component {
   render() {
     // eslint-disable-next-line no-unused-vars
     const { Component, interpolateSelection, ...props } = this.props;
+    console.log('props', props);
 
     return (
       <Component
